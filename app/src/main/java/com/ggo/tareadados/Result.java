@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class Result extends AppCompatActivity {
     private Button regreso;
-    private ImageView[] img1=new ImageView[5];
+    private ImageView[] img=new ImageView[5];
     private TextView res1;
     private TextView res2;
     private TextView res3;
@@ -30,11 +30,11 @@ public class Result extends AppCompatActivity {
 
         setContentView(R.layout.activity_result);
         regreso = (Button) findViewById(R.id.regreso);
-        img1[0]=(ImageView) findViewById(R.id.dado1);
-        img1[1]=(ImageView) findViewById(R.id.dado2);
-        img1[2]=(ImageView) findViewById(R.id.dado3);
-        img1[3]=(ImageView) findViewById(R.id.dado4);
-        img1[4]=(ImageView) findViewById(R.id.dado5);
+        img[0]=(ImageView) findViewById(R.id.dado1);
+        img[1]=(ImageView) findViewById(R.id.dado2);
+        img[2]=(ImageView) findViewById(R.id.dado3);
+        img[3]=(ImageView) findViewById(R.id.dado4);
+        img[4]=(ImageView) findViewById(R.id.dado5);
         res1= (TextView) findViewById(R.id.res1);
         res2= (TextView) findViewById(R.id.res2);
         res3= (TextView) findViewById(R.id.res3);
@@ -46,14 +46,13 @@ public class Result extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         int[] cantidad = extras.getIntArray("cantidad");
-        //int[] dados1 = extras.getIntArray("dados1");
-        //ImageView[] img = (ImageView[]) extras.getParcelableArray("dados");
+        int[] dados1 = extras.getIntArray("dados1");
 
-        /*for(int i=0; i<5; i++) {
+        for(int i=0; i<5; i++) {
             resID = getResources().getIdentifier(dados[dados1[i]], "drawable", getPackageName());
-            img1[i].setTag(resID);
+            img[i].setTag(resID);
             img[i].setImageResource(resID);
-        }*/
+        }
 
 
         contar(cantidad);

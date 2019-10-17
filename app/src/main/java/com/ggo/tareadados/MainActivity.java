@@ -115,8 +115,7 @@ public class MainActivity extends AppCompatActivity {
         if (oportunidad == 2){
             Intent intent = new Intent( this, Result.class);
             intent.putExtra("cantidad",cantidad);
-            //intent.putExtra("dados1",dados1);
-            //intent.putExtra("dados",img);
+            intent.putExtra("dados1",dados1);
             startActivity(intent);
         }
     }
@@ -157,6 +156,14 @@ public class MainActivity extends AppCompatActivity {
                                         oportunidad=2;
                                     }
 
+                                    for (int i = 0; i < 5; i++) {
+                                        cantidad[(dados1[i])]++;
+                                        Log.d("i", String.valueOf(i));
+                                        Log.d("dados1", String.valueOf(dados1[i]));
+                                    }
+
+                                    Adios();
+
                                 }
                         })
                         .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -169,11 +176,14 @@ public class MainActivity extends AppCompatActivity {
                 alert.show();
             }
         }
+
+    }
+
+    public void Adios(){
         if (oportunidad == 2){
             Intent intent = new Intent( this, Result.class);
             intent.putExtra("cantidad",cantidad);
             intent.putExtra("dados1",dados1);
-            intent.putExtra("dados",img);
             startActivity(intent);
         }
     }
